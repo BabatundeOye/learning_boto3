@@ -30,12 +30,12 @@ TAGS = [
     }
 ]
 
-#instances = EC2_RESOURCE.instances.filter(
-    #InstanceIds=[
-        #INSTANCE_ID,
-    #],
-#)
+instances = ec2_resource.instances.filter(
+    InstanceIds=[
+        INSTANCE_ID,
+    ],
+)
 
 for instance in data:
     instance.create_tags(Tags=TAGS)
-    print(f'Tags successfully added to the instance {instance.id}'
+    print(f'Tags successfully added to the instance {instance.id})'
